@@ -7,12 +7,12 @@
 
 // ─── CONFIG ────────────────────────────────────────────────
 const CONFIG = {
-  // PRIMARY: Groq (fast, free)
-  GROQ_API_KEY: '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',
+  // PRIMARY: Groq (fast, free) — get your key at https://console.groq.com
+  GROQ_API_KEY: '',   // ← paste your Groq API key here
   GROQ_MODEL:   'llama-3.3-70b-versatile',
 
   // FALLBACK: Gemini (get free key → https://aistudio.google.com/app/apikey)
-  GEMINI_API_KEY: 'AIzaSyD6KmVPG-VBViCZ0WNmKEUIAm05s9eAhvA',   // ← paste your Gemini key here if you want fallback
+  GEMINI_API_KEY: '',   // ← paste your Gemini key here if you want fallback
   GEMINI_MODEL:   'gemini-1.5-flash',
 
   GAS_WEB_APP_URL: 'https://script.google.com/macros/s/AKfycbzmSLcWTcafeTRRw0Xct_-2dxppKMX8ci-mIWbOyNRsnLXh94MS-xuKnN3Mt79slgSy/exec',
@@ -742,14 +742,16 @@ async function saveToSheets(result) {
     timestamp: new Date().toISOString(),
   };
 
-  const res = await fetch(CONFIG.GAS_WEB_APP_URL, {
+  // mode: no-cors is required for browser→GAS requests to avoid CORS preflight errors.
+  // The data still saves on the GAS side; we just can't read the response body.
+  await fetch(CONFIG.GAS_WEB_APP_URL, {
     method: 'POST',
+    mode: 'no-cors',
     headers: { 'Content-Type': 'text/plain' },
     body: JSON.stringify(payload),
   });
 
-  const text = await res.text();
-  log('[GAS] Response:', text);
+  log('[GAS] Payload sent to Sheets (no-cors mode).');
 }
 
 // ─── TOAST SYSTEM ────────────────────────────────────────────
