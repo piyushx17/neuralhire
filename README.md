@@ -7,7 +7,7 @@
 
 | Resource | Link |
 |----------|------|
-| **🌐 Live Web App** | [Open NeuralHire](https://script.google.com/macros/s/AKfycbzmSLcWTcafeTRRw0Xct_-2dxppKMX8ci-mIWbOyNRsnLXh94MS-xuKnN3Mt79slgSy/exec) |
+| **🌐 Live Web App** | [Open NeuralHire](https://piyushx17.github.io/neuralhire/) |
 | **📁 Apps Script Project** | [View Code.gs & helpers.gs](https://script.google.com/d/1qq2ZP7Xk5N0B-Ql6fOmV3tikaFGuj7qQuMPhDGju2I66MZlha9pKGNjn/edit?usp=sharing) |
 | **📂 Code Folder (Drive)** | [Google Drive Folder](https://drive.google.com/drive/folders/13w7wMHrKjEJQWXokZXV0WVXbpblbsOPx?usp=sharing) |
 | **📊 Google Sheet (DB)** | [Live Screening Data](https://docs.google.com/spreadsheets/d/1s1RRdaNRrM9A9EX_4d1ksjZo7p9UOuOL2yvEevsoxUw/edit?usp=sharing) |
